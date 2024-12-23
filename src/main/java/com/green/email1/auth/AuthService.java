@@ -24,6 +24,8 @@ public class AuthService {
     public boolean sendCodeToEmail(String to, String subject, AuthCodeDto authCodeDto) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper;
+
+        authCodeDto.setEmail(to);
         try {
             helper = new MimeMessageHelper(mimeMessage, true);
             helper.setTo(to);
