@@ -8,10 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -33,9 +30,9 @@ public class AuthController {
                 .build();
     }
 
-    @PostMapping("verify-code")
+    @GetMapping("verify-code")
     @Operation(description = "이메일 인증 코드 검사")
-    public ResultResponse<Boolean> postVerifyCode(@RequestBody VerifyEmailAuthCodeReq p) {
+    public ResultResponse<Boolean> postVerifyCode(@ModelAttribute VerifyEmailAuthCodeReq p) {
         boolean result = authCodeService.validateAuthCode(p);
         return ResultResponse.<Boolean>builder()
                 .resultMessage(String.format("인증 %s", result ? "성공" : "실패"))

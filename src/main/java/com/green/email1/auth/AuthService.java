@@ -44,9 +44,10 @@ public class AuthService {
     }
 
     private Context getContext(AuthCodeDto authCodeDto) {
-        Map<String, Object> dto = new HashMap<>(2);
+        Map<String, Object> dto = new HashMap<>(3);
         dto.put("authCode", authCodeDto.getAuthCode());
         dto.put("maxDate", authCodeDto.getMaxDate());
+        dto.put("email", authCodeDto.getEmail());
         Context context = new Context();
         context.setVariables(dto);
         return context;

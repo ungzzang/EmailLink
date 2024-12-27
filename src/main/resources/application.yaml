@@ -24,11 +24,11 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: ungjae1322
-    password: 비번
+    password: esbrbvglgeadsado
     properties:
       mail:
         smtp:
-          auth: true  # SMTP ?? ??
+          auth: true
           starttls:
             enable: true
   thymeleaf:
