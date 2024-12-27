@@ -14,7 +14,7 @@ spring:
     name: email1
   datasource:
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mariadb://localhost/ca2sa
+    url: jdbc:log4jdbc:mariadb://localhost/greengram_ver3
     username: root
     password: green502
   servlet:
@@ -23,8 +23,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ungjae1322
-    password: esbrbvglgeadsado
+    username: mandalart502@gmail.com
+    password: rfjaqquzxnmzrfbq
     properties:
       mail:
         smtp:
